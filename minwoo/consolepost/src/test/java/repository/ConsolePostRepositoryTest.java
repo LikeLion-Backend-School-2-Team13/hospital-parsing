@@ -67,7 +67,7 @@ class ConsolePostRepositoryTest {
         }
 
         @Test
-        @DisplayName("잘못된 아이디로 검색 시 Optional.empty() 반환")
+        @DisplayName("잘못된 아이디로 검색 시 null 반환")
         void findOneByWrongId() {
             Post find = consolePostRepository.findOneById(1);
             assertNull(find);
