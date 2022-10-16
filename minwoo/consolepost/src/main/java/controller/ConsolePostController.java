@@ -1,7 +1,7 @@
 package controller;
 
 import domain.Post;
-import repository.ConsolePostRepository;
+import dto.PostReqDTO;
 import service.ConsolePostService;
 
 import java.util.List;
@@ -17,8 +17,8 @@ public class ConsolePostController {
         return consolePostService.findAllPost();
     }
 
-    public Post createPost(Post post) {
-        return consolePostService.createPost(post);
+    public Post createPost(PostReqDTO dto) {
+        return consolePostService.createPost(dto);
     }
 
     public Post findOne(int id) {

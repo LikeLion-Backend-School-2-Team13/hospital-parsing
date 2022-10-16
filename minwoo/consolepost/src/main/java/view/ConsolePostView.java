@@ -3,7 +3,6 @@ package view;
 import domain.Post;
 
 import java.util.List;
-import java.util.Scanner;
 
 public class ConsolePostView {
     public void menu() {

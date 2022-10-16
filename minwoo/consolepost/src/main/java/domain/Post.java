@@ -2,13 +2,13 @@ package domain;
 
 public class Post {
     private int id;
-    private String title;
     private String author;
+    private String title;
     private String body;
 
-    public Post(String title, String author, String body) {
-        this.title = title;
+    public Post(String author, String title, String body) {
         this.author = author;
+        this.title = title;
         this.body = body;
     }
 

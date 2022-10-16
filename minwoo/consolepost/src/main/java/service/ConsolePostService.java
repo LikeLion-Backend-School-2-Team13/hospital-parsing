@@ -1,6 +1,7 @@
 package service;
 
 import domain.Post;
+import dto.PostReqDTO;
 import repository.ConsolePostRepository;
 
 import java.util.List;
@@ -16,8 +17,8 @@ public class ConsolePostService {
         return consolePostRepository.findAll();
     }
 
-    public Post createPost(Post post) {
-        return consolePostRepository.save(post);
+    public Post createPost(PostReqDTO dto) {
+        return consolePostRepository.save(dto.toEntity());
     }
 
     public Post findOne(int id) {

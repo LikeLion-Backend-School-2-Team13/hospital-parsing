@@ -1,5 +1,6 @@
 import controller.ConsolePostController;
 import domain.Post;
+import dto.PostReqDTO;
 import view.ConsolePostView;
 
 import java.util.List;
@@ -39,8 +40,8 @@ public class ConsolePostApplication {
                     String title = scanner.nextLine();
                     view.inputTextBody();
                     String body = scanner.nextLine();
-                    Post newPost = new Post(title, author, body);
-                    Post saved = controller.createPost(newPost);
+                    PostReqDTO dto = new PostReqDTO(author, title, body);
+                    Post saved = controller.createPost(dto);
                     view.printPost(saved);
                     break;
                 case 4:
