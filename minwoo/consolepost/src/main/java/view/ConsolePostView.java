@@ -17,10 +17,10 @@ public class ConsolePostView {
 
     public void postListUp(List<Post> posts) {
         System.out.println("===============================================================");
-        System.out.println("번호\t제목\t작성자");
+        System.out.printf("%-5s%-45s%-10s\n", "번호", "제목", "작성자");
         System.out.println("===============================================================");
         for (Post post : posts) {
-            System.out.printf("%d\t%s\t%s\n", post.getId(), post.getTitle(), post.getAuthor());
+            System.out.printf("%-5d%-45s%-10s\n", post.getId(), post.getTitle(), post.getAuthor());
         }
     }
 
@@ -49,6 +49,7 @@ public class ConsolePostView {
     }
 
     public void printPost(Post post) {
+        if (post == null) return;
         System.out.println("===============================================================");
         System.out.printf("번호 : %d\n", post.getId());
         System.out.printf("작성자 : %s\n", post.getAuthor());

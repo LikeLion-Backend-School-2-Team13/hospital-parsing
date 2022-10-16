@@ -30,7 +30,7 @@ public class ConsolePostApplication {
                     int readId = scanInt();
                     if (!validScanInt(readId)) break;
                     Post findPost = controller.findOne(readId);
-                    if (findPost != null) view.printPost(findPost);
+                    view.printPost(findPost);
                     break;
                 case 3:
                     view.inputTextAuthor();
