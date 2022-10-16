@@ -2,31 +2,31 @@ package controller;
 
 import domain.Post;
 import repository.ConsolePostRepository;
+import service.ConsolePostService;
 
 import java.util.List;
 
 public class ConsolePostController {
-    private final ConsolePostRepository consolePostRepository;
+    private final ConsolePostService consolePostService;
 
-    public ConsolePostController(ConsolePostRepository consolePostRepository) {
-        this.consolePostRepository = consolePostRepository;
+    public ConsolePostController(ConsolePostService consolePostService) {
+        this.consolePostService = consolePostService;
     }
 
     public List<Post> findAllPost() {
-        return consolePostRepository.findAll();
+        return consolePostService.findAllPost();
     }
 
     public Post createPost(Post post) {
-        return consolePostRepository.save(post);
+        return consolePostService.createPost(post);
     }
 
     public Post findOne(int id) {
-        Post post = consolePostRepository.findOneById(id);
-        if (post == null) System.out.println("해당하는 게시글이 없습니다.");
+        Post post = consolePostService.findOne(id);
         return post;
     }
 
     public void deleteOne(int id) {
-        consolePostRepository.deleteById(id);
+        consolePostService.deleteOne(id);
     }
 }
