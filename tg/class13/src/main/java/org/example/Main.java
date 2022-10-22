@@ -11,6 +11,7 @@ public class Main {
 
         Scanner input=new Scanner(System.in);
 Message message=new Message();
+Post post = new Post();
 
 
 while(true){
